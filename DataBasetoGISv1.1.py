@@ -18,7 +18,7 @@ pm2=xl.dropna(axis=0,subset=['pmfromst2'])
 pm2=pm2.drop(['pmfromst1','pmtost1','pmfromst3','pmtost3'],axis=1)#removes column from otherstations
 pm2=pm2.rename(index=str,columns={'pmfromst2':'pmfromst1','pmtost2':'pmtost1'})#rename columns of stationing
 
-#remove rows that have Nan in column pmfromst2
+#remove rows that have Nan in column pmfromst3
 pm3=xl.dropna(axis=0,subset=['pmfromst3'])
 pm3=pm3.drop(['pmfromst1','pmtost1','pmfromst2','pmtost2'],axis=1)
 pm3=pm3.rename(index=str,columns={'pmfromst3':'pmfromst1','pmtost3':'pmtost1'})
