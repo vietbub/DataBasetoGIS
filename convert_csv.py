@@ -17,17 +17,20 @@ class Window1:
         self.extbtn= Button(master, text='Exit', command=quit)
 
         #button location
-        self.filebtn.place(relx=0.5, rely=0.2, anchor=CENTER)
-        self.dirbtn.place(relx=0.5, rely=0.4, anchor=CENTER)
-        self.okbtn.place(relx=0.5, rely=0.6, anchor=CENTER)
-        self.extbtn.place(relx=0.5, rely=0.8, anchor=CENTER)
-        #set lavels
-        global dirpath, filepath
+
+        self.filebtn.grid(row=0,column=0)
+        self.dirbtn.grid(row=2,column=0)
+        self.okbtn.grid(row=4,column=0)
+        self.extbtn.grid(row=6, column=0)
+        #set labels
+        global dirpath, filepath, conpath
 
         filepath=Label(master)
-        filepath.place(relx=0.1,rely=0.2)
+        filepath.grid(row=0, column=1)
         dirpath = Label(master)
-        dirpath.place(relx=0.1, rely=0.4)
+        dirpath.grid(row=2,column=1)
+        conpath=Label(master)
+        conpath.grid(row=4,column=1)
 
     def importfile(self):
         self.filename = filedialog.askopenfilename(initialdir='/', title="Select an CSV file", filetypes=(
@@ -47,9 +50,11 @@ class Window1:
 
     def convert(self):
         databasetogis.conversion(fil, dirt)
+        conpath.config(text="Converted")
+
 
 
 root=Tk()
-root.geometry('600x200')
+root.geometry('500x200')
 App = Window1(root)
 root.mainloop()

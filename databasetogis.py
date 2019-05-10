@@ -33,6 +33,5 @@ def conversion(fil,dirt):
 
     pm1.to_csv(user1+ '/converted.csv',
                index=None,header=True)
-    print(user1+'/converted.csv')
 
 
