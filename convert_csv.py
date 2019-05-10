@@ -14,7 +14,7 @@ class Window1:
         self.filebtn = Button(master, text="browse", command=self.importfile)
         self.dirbtn = Button(master, text='select directory', command=self.directory)
         self.okbtn = Button(master, text='Convert', command=self.convert)
-        self.extbtn= Button(master, text='Exit', command=quit)
+        self.extbtn= Button(master, text='Exit', command=master.destroy)
 
         #button location
 
